@@ -16,9 +16,14 @@ html(lang="zh-TW")
 			link(href="/css/general.css", rel="stylesheet")
 			link(href="/css/plugin.css", rel="stylesheet")
 			link(href="/css/login.css", rel="stylesheet")
+			link(href="/vendors/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet")
+			link(href="/vendors/datatables-responsive/dataTables.responsive.css" rel="stylesheet")
 	body.plugin-container
 		include navigation.pug
 		#page-wrapper
 			block body_content
 		block body_scripts
 			script(src="/js/jquery.min.js")
+			script(src="/vendors/datatables/js/jquery.dataTables.min.js")
+			script(src="/vendors/datatables-plugins/dataTables.bootstrap.min.js")
+			script(src="/vendors/datatables-responsive/dataTables.responsive.js")

@@ -15,12 +15,12 @@ block body_content
 								a.btn.btn-success(
 									href="/bandai-stock/new"
 								) 新增
-						table#users-table.table.table-striped.table-bordered.table-hover.table-cell-align-center.table-narrow
+						table#bandai-table.table.table-striped.table-bordered.table-hover.table-cell-align-center.table-narrow.table-fixed
 							thead
 								tr
 									th 建立時間
 									th 標題
-									th 網址
+									th(style="width: 35%") 網址
 									th 上次有庫存日期
 									th 上次沒庫存日期
 									th 狀態
@@ -30,7 +30,7 @@ block body_content
 									tr
 										td #{__pug_ext.getFormattedDate(bandaiStock.createdAt)}
 										td #{bandaiStock.name}
-										td #{bandaiStock.url}
+										td(style="word-break: break-word;") #{bandaiStock.url}
 										td #{bandaiStock.lastInStockAt ? __pug_ext.getFormattedDate(bandaiStock.lastInStockAt) : ""}
 										td #{bandaiStock.lastOutOfStockAt ? __pug_ext.getFormattedDate(bandaiStock.lastOutOfStockAt) : ""}
 										td #{bandaiStock.status}
@@ -40,3 +40,10 @@ block body_content
 												href="/bandai-stock/" + bandaiStock._id + "/delete"
 												onclick="return confirm('確定刪除？')"
 											) 刪除
+append body_scripts
+	script.
+		$('#bandai-table').DataTable({
+			searching: true,
+			lengthChange: false,
+			autoWidth: false
+		});

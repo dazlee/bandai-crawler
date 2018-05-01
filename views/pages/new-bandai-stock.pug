@@ -34,7 +34,6 @@ block body_content
 										name="notifyEmails"
 										required=true
 									)
-
 						if error
 							.row
 								.col-md-12
@@ -43,3 +42,38 @@ block body_content
 						button.btn.btn-primary.right(
 							type="submit"
 						) 創建
+	.row
+		.col-lg-12
+			form.form-horizontal(
+				method="POST"
+				enctype="multipart/form-data"
+				action="/bandai-stock/new/csv"
+			)
+				.panel.panel-primary
+					.panel-heading 新增Bandai庫存爬蟲上傳CSV
+					.panel-body
+						.row
+							.form-group.col-md-12
+								label.control-label.col-md-2 標題
+								.col-md-6
+									input.form-control(
+										type="file"
+										name="file"
+										required=true
+									)
+						.row
+							.form-group.col-md-12
+								label.control-label.col-md-2 提醒email列表(用,分隔)
+								.col-md-6
+									input.form-control(
+										name="notifyEmails"
+										required=true
+									)
+						if error
+							.row
+								.col-md-12
+									.alert.alert-danger #{error}
+					.panel-footer.clear
+						button.btn.btn-primary.right(
+							type="submit"
+						) 上傳

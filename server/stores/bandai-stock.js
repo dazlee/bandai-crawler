@@ -12,6 +12,8 @@ function createBandaiStock(attributes) {
 function updateBandaiStockById(_id, attributes) {
 	return findOneAndUpdate({_id}, {
 		$set: attributes
+	}, {
+		new: true
 	});
 }
 function removeBandaiStockById(_id) {

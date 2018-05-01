@@ -65,9 +65,11 @@ router.post("/new/csv", async function (req, res) {
 			.on("end", async function() {
 				for (let i = 0, {length} = bandaiStocks; i < length; i++) {
 					let bandaiStock = bandaiStocks[i];
-					bandaiStock.notifyEmails = fields.notifyEmails;
-					bandaiStock.createdBy = user.username;
-					await createBandaiStock(bandaiStock);
+					if (bandaiStock.name && bandaiStock.url) {
+						bandaiStock.notifyEmails = fields.notifyEmails;
+						bandaiStock.createdBy = user.username;
+						await createBandaiStock(bandaiStock);
+					}
 				}
 				res.redirect("/bandai-stock");
 			});

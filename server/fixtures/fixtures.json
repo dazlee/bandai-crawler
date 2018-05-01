@@ -1,0 +1,9 @@
+{
+	"users": [
+		{"username" : "admin", "password" : "admin", "role": "admin", "displayName": "admin", "status": "offline"},
+		{"username" : "annie", "password" : "annie", "role": "admin", "displayName": "Annie", "status": "offline"},
+		{"username" : "tiger", "password" : "tiger", "role": "member", "displayName": "虎面", "status": "offline"},
+		{"username" : "rabbit", "password" : "rabbit", "role": "member", "displayName": "兔面", "status": "offline"},
+		{"username" : "pjpj", "password" : "pjpj", "role": "member", "displayName": "PJPJ", "status": "offline"}
+	]
+}

@@ -1,0 +1,13 @@
+[
+	{
+		"title"		: "Bandai爬蟲",
+		"menu"		: [
+			{
+				"title": "所有Bandai爬蟲",
+				"uri": "/bandai-stock",
+				"roles" : []
+			}
+		],
+		"roles" : []
+	}
+]

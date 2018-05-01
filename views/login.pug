@@ -1,0 +1,30 @@
+extend ./layouts/entrance
+
+block body_content
+	.login-container
+		.login-panel.panel.panel-default
+			.panel-heading
+				h3.panel-title 登入
+			.panel-body
+				form(
+					method="POST"
+					action="/login"
+				)
+					.form-group
+						input.form-control(
+							placeholder="帳號"
+							name="username"
+						)
+					.form-group
+						input.form-control(
+							placeholder="密碼"
+							name="password"
+							type="password"
+						)
+					- console.log(message)
+					if message
+						.alert.alert-danger #{message}
+					.form-group
+						button.btn.btn-lg.btn-success.btn-block(
+							type="submit"
+						) 登入

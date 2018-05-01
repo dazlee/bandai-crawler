@@ -1,0 +1,51 @@
+extends ../layouts/management
+
+block body_content
+	.row
+		.col-lg-12
+			h1.page-header 修改Bandai庫存爬蟲
+	.row
+		.col-lg-12
+			form.form-horizontal(method="POST")
+				.panel.panel-primary
+					.panel-heading 修改Bandai庫存爬蟲
+					.panel-body
+						.row
+							.col-md-12
+								pre #{bandaiStock}
+						.row
+							.form-group.col-md-12
+								label.control-label.col-md-2 標題
+								.col-md-6
+									input.form-control(
+										name="name"
+										required=true
+										value=bandaiStock.name
+									)
+						.row
+							.form-group.col-md-12
+								label.control-label.col-md-2 網址
+								.col-md-6
+									input.form-control(
+										name="url"
+										required=true
+										value=bandaiStock.url
+									)
+						.row
+							.form-group.col-md-12
+								label.control-label.col-md-2 提醒email列表(用,分隔)
+								.col-md-6
+									input.form-control(
+										name="notifyEmails"
+										required=true
+										value=bandaiStock.notifyEmails
+									)
+
+						if error
+							.row
+								.col-md-12
+									.alert.alert-danger #{error}
+					.panel-footer.clear
+						button.btn.btn-primary.right(
+							type="submit"
+						) 更新

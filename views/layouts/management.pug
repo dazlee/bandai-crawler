@@ -1,0 +1,24 @@
+doctype html
+html(lang="zh-TW")
+	head
+		block head_meta
+			meta(charset="utf-8")
+			meta(http-equiv="X-UA-Compatible", content="IE=edge")
+			meta(name="viewport", content="width=device-width, initial-scale=1")
+			meta(name="description", content="")
+			meta(name="author", content="")
+		block head_title
+			title Bandai爬蟲
+		block head_style
+			link(href="/css/bootstrap.min.css", rel="stylesheet")
+			link(href="/css/font-awesome.min.css", rel="stylesheet")
+			link(href="/css/template.min.css", rel="stylesheet")
+			link(href="/css/general.css", rel="stylesheet")
+			link(href="/css/plugin.css", rel="stylesheet")
+			link(href="/css/login.css", rel="stylesheet")
+	body.plugin-container
+		include navigation.pug
+		#page-wrapper
+			block body_content
+		block body_scripts
+			script(src="/js/jquery.min.js")

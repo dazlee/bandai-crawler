@@ -1,0 +1,42 @@
+extends ../layouts/management
+
+block body_content
+	.row
+		.col-lg-12
+			h1.page-header Bandai庫存爬蟲
+	.row
+		.col-lg-12
+			form.form-horizontal(method="POST")
+				.panel.panel-primary
+					.panel-heading Bandai庫存爬蟲
+					.panel-body
+						.row
+							.col-md-4
+								a.btn.btn-success(
+									href="/bandai-stock/new"
+								) 新增
+						table#users-table.table.table-striped.table-bordered.table-hover.table-cell-align-center.table-narrow
+							thead
+								tr
+									th 建立時間
+									th 標題
+									th 網址
+									th 上次有庫存日期
+									th 上次沒庫存日期
+									th 狀態
+									th 功能
+							tbody
+								for bandaiStock in bandaiStocks
+									tr
+										td #{__pug_ext.getFormattedDate(bandaiStock.createdAt)}
+										td #{bandaiStock.name}
+										td #{bandaiStock.url}
+										td #{bandaiStock.lastInStockAt ? __pug_ext.getFormattedDate(bandaiStock.lastInStockAt) : ""}
+										td #{bandaiStock.lastOutOfStockAt ? __pug_ext.getFormattedDate(bandaiStock.lastOutOfStockAt) : ""}
+										td #{bandaiStock.status}
+										td
+											a.btn.btn-default.btn-xs(href="/bandai-stock/" + bandaiStock._id + "/edit") 修改
+											a.btn.btn-default.btn-xs(
+												href="/bandai-stock/" + bandaiStock._id + "/delete"
+												onclick="return confirm('確定刪除？')"
+											) 刪除

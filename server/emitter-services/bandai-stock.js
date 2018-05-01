@@ -46,7 +46,8 @@ async function checkBandaiStatus(url) {
 	checkStatus(res);
 	const html = await res.text();
 	const hasStock = html.indexOf("全部沒有在庫") === -1;
-	return hasStock ? "IN_STOCK" : "OUT_OF_STOCK";
+	const hasStockEN = html.indexOf("Out\ of\ Stock") === -1;
+	return hasStock && hasStockEN ? "IN_STOCK" : "OUT_OF_STOCK";
 }
 
 function sendEmail(bandaiStock) {

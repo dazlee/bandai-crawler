@@ -50,17 +50,19 @@ async function checkBandaiStatus(url) {
 }
 
 function sendEmail(bandaiStock) {
-	const stockWord = bandaiStock.status === "IN_STOCK" ? "有庫存！" : "庫存沒了！";
-	let mailOptions = {
-		from: 'bitcrawler <daz.lee1987@gmail.com>',
-		to: "daz.lee1987@gmail.com",
-		subject: `${bandaiStock.name} ${stockWord}`,
-		html: `${bandaiStock.name} ${stockWord}</br>時間：${new Date()}</br>網址：${bandaiStock.url}`
-	};
+	if (bandaiStock.notifyEmails) {
+		const stockWord = bandaiStock.status === "IN_STOCK" ? "有庫存！" : "庫存沒了！";
+		let mailOptions = {
+			from: 'bitcrawler <daz.lee1987@gmail.com>',
+			to: bandaiStock.notifyEmails,
+			subject: `${bandaiStock.name} ${stockWord}`,
+			html: `${bandaiStock.name} ${stockWord}</br>時間：${new Date()}</br>網址：${bandaiStock.url}`
+		};
 
-	transporter.sendMail(mailOptions, (error, info) => {
-		if (error) {
-			return console.log(error);
-		}
-	});
+		transporter.sendMail(mailOptions, (error, info) => {
+			if (error) {
+				return console.log(error);
+			}
+		});
+	}
 }

@@ -33,7 +33,7 @@ const ModelSchema = new Schema({
 	timestamps: {createdAt: "createdAt", updatedAt: "updatedAt"},
 });
 
-const Model = mongoose.model("bandai-stocks", ModelSchema);
+const Model = mongoose.model("bandai_stocks", ModelSchema);
 
 module.exports = {
 	find: function (...theArgs) {

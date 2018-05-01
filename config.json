@@ -2,13 +2,13 @@
 	"mode": "local",
 	"local": {
 		"hostname": "http://localhost",
-		"port": "3000",
-		"backgroundPort": "3001",
-		"mongoURL": "mongodb://localhost:27017/bitdb-local",
+		"port": "8080",
+		"backgroundPort": "8081",
+		"mongoURL": "mongodb://localhost:27017/bandai-local",
 		"logLevel": {
 			"console": "debug",
 			"file": "debug",
-			"logFilePath": "/var/log/bitdb-local.log"
+			"logFilePath": "/var/log/bandai-local.log"
 		},
 		"jwtSecret": "MyS3cr3tK3YYYY",
 		"jwtSession": {
@@ -21,11 +21,11 @@
 		"hostname": "http://52.193.93.112",
 		"port": "3000",
 		"backgroundPort": "3001",
-		"mongoURL": "mongodb://localhost:27017/bitdb-dev",
+		"mongoURL": "mongodb://localhost:27017/bandai-dev",
 		"logLevel": {
 			"console": "debug",
 			"file": "debug",
-			"logFilePath": "/var/log/bitdb-development.log"
+			"logFilePath": "/var/log/bandai-development.log"
 		},
 		"jwtSecret": "MyS3cr3tK3YYYY",
 		"jwtSession": {
@@ -38,11 +38,11 @@
 		"hostname": "http://ec2-52-193-93-112.ap-northeast-1.compute.amazonaws.com",
 		"port": "3000",
 		"backgroundPort": "3001",
-		"mongoURL": "mongodb://localhost:27017/bitdb-pre-prod",
+		"mongoURL": "mongodb://localhost:27017/bandai-pre-prod",
 		"logLevel": {
 			"console": "debug",
 			"file": "debug",
-			"logFilePath": "/var/log/bitdb-pre-production.log"
+			"logFilePath": "/var/log/bandai-pre-production.log"
 		},
 		"jwtSecret": "MyS3cr3tK3YYYY",
 		"jwtSession": {
@@ -55,11 +55,11 @@
 		"hostname": "http://ec2-52-193-93-112.ap-northeast-1.compute.amazonaws.com",
 		"port": "3000",
 		"backgroundPort": "3001",
-		"mongoURL": "mongodb://localhost:27017/bitdb-prod",
+		"mongoURL": "mongodb://localhost:27017/bandai-prod",
 		"logLevel": {
 			"console": "debug",
 			"file": "debug",
-			"logFilePath": "/var/log/bitdb-production.log"
+			"logFilePath": "/var/log/bandai-production.log"
 		},
 		"jwtSecret": "MyS3cr3tK3YYYY",
 		"jwtSession": {

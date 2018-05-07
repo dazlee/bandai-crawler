@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.subscribe = function (emitter) {
-	emitter.on("period", async function() {
+	emitter.on("three-hours", async function() {
 		const bandaiStocks = await getAllBandaiStocks();
 		for (let i = 0, {length} = bandaiStocks; i < length; i++) {
 			try {

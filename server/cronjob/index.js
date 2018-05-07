@@ -6,9 +6,14 @@ exports.init = function (emitter, config) {
 	_config = config;
 }
 exports.start = function () {
-	const {cronJobPeriodInMins} = _config;
+	const {cronJobPeriodInMins, cronJobPeriodInHours} = _config;
 	const cronJobExpression = `*/${cronJobPeriodInMins} * * * *`;
 	cron.schedule(cronJobExpression, function () {
 		_emitter.emit("period");
+	});
+
+	const cronJob3Hrs = `0 */${cronJobPeriodInHours} * * *`;
+	cron.schedule(cronJobExpression, function () {
+		_emitter.emit("three-hours");
 	});
 };

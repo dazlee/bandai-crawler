@@ -15,7 +15,8 @@
 			"session": false
 		},
 		"cronJobPeriodInSecs": 5,
-		"cronJobPeriodInMins": 1
+		"cronJobPeriodInMins": 1,
+		"cronJobPeriodInHours": 3
 	},
 	"development": {
 		"hostname": "http://52.193.93.112",

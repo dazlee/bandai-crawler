@@ -3,6 +3,7 @@ const { EventEmitter } = require("events");
 const emitter = new EventEmitter();
 const events = [
 	"period",
+	"three-hours"
 ];
 
 exports.emit = function(event, args) {
